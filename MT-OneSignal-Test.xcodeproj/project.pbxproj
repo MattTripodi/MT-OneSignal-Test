@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		343D1FC02B65C00000467007 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343D1FBF2B65C00000467007 /* AppDelegate.swift */; };
 		343D1FC22B65C00000467007 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343D1FC12B65C00000467007 /* SceneDelegate.swift */; };
-		343D1FC42B65C00000467007 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343D1FC32B65C00000467007 /* ViewController.swift */; };
+		343D1FC42B65C00000467007 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343D1FC32B65C00000467007 /* LoginViewController.swift */; };
 		343D1FC72B65C00000467007 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 343D1FC52B65C00000467007 /* Main.storyboard */; };
 		343D1FC92B65C00100467007 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 343D1FC82B65C00100467007 /* Assets.xcassets */; };
 		343D1FCC2B65C00100467007 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 343D1FCA2B65C00100467007 /* LaunchScreen.storyboard */; };
+		343D1FD72B65C18400467007 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343D1FD62B65C18400467007 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		343D1FBC2B65C00000467007 /* MT-OneSignal-Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MT-OneSignal-Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		343D1FBF2B65C00000467007 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		343D1FC12B65C00000467007 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		343D1FC32B65C00000467007 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		343D1FC32B65C00000467007 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		343D1FC62B65C00000467007 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		343D1FC82B65C00100467007 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		343D1FCB2B65C00100467007 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		343D1FCD2B65C00100467007 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		343D1FD62B65C18400467007 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +60,38 @@
 			children = (
 				343D1FBF2B65C00000467007 /* AppDelegate.swift */,
 				343D1FC12B65C00000467007 /* SceneDelegate.swift */,
-				343D1FC32B65C00000467007 /* ViewController.swift */,
-				343D1FC52B65C00000467007 /* Main.storyboard */,
+				343D1FD32B65C00E00467007 /* Model */,
+				343D1FD42B65C01700467007 /* View */,
+				343D1FD52B65C01C00467007 /* Controller */,
 				343D1FC82B65C00100467007 /* Assets.xcassets */,
-				343D1FCA2B65C00100467007 /* LaunchScreen.storyboard */,
 				343D1FCD2B65C00100467007 /* Info.plist */,
 			);
 			path = "MT-OneSignal-Test";
+			sourceTree = "<group>";
+		};
+		343D1FD32B65C00E00467007 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		343D1FD42B65C01700467007 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				343D1FC52B65C00000467007 /* Main.storyboard */,
+				343D1FCA2B65C00100467007 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		343D1FD52B65C01C00467007 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				343D1FC32B65C00000467007 /* LoginViewController.swift */,
+				343D1FD62B65C18400467007 /* MainViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +165,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				343D1FC42B65C00000467007 /* ViewController.swift in Sources */,
+				343D1FC42B65C00000467007 /* LoginViewController.swift in Sources */,
 				343D1FC02B65C00000467007 /* AppDelegate.swift in Sources */,
 				343D1FC22B65C00000467007 /* SceneDelegate.swift in Sources */,
+				343D1FD72B65C18400467007 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
