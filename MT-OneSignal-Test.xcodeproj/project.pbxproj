@@ -14,6 +14,8 @@
 		343D1FC92B65C00100467007 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 343D1FC82B65C00100467007 /* Assets.xcassets */; };
 		343D1FCC2B65C00100467007 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 343D1FCA2B65C00100467007 /* LaunchScreen.storyboard */; };
 		343D1FD72B65C18400467007 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343D1FD62B65C18400467007 /* MainViewController.swift */; };
+		343D1FD92B65CAC100467007 /* DesignableUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343D1FD82B65CAC100467007 /* DesignableUITextField.swift */; };
+		343D1FDB2B66E11F00467007 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343D1FDA2B66E11F00467007 /* RoundButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		343D1FCB2B65C00100467007 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		343D1FCD2B65C00100467007 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		343D1FD62B65C18400467007 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		343D1FD82B65CAC100467007 /* DesignableUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableUITextField.swift; sourceTree = "<group>"; };
+		343D1FDA2B66E11F00467007 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,8 @@
 			children = (
 				343D1FC52B65C00000467007 /* Main.storyboard */,
 				343D1FCA2B65C00100467007 /* LaunchScreen.storyboard */,
+				343D1FD82B65CAC100467007 /* DesignableUITextField.swift */,
+				343D1FDA2B66E11F00467007 /* RoundButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -165,6 +171,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				343D1FDB2B66E11F00467007 /* RoundButton.swift in Sources */,
+				343D1FD92B65CAC100467007 /* DesignableUITextField.swift in Sources */,
 				343D1FC42B65C00000467007 /* LoginViewController.swift in Sources */,
 				343D1FC02B65C00000467007 /* AppDelegate.swift in Sources */,
 				343D1FC22B65C00000467007 /* SceneDelegate.swift in Sources */,
