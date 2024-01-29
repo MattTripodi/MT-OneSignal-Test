@@ -37,3 +37,10 @@ playground.xcworkspace
 Podfile.lock
 Pods/
 *.xcworkspace
+
+## Certs
+*.cer
+*.certSigningRequest
+
+## User settings
+xcuserdata/

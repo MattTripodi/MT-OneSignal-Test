@@ -9,6 +9,8 @@ import UIKit
 
 class FeatureTableViewCell: UITableViewCell {
 
+    @IBOutlet var featureLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
