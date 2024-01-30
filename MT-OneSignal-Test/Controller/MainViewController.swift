@@ -7,6 +7,7 @@
 
 import UIKit
 import OneSignalFramework
+import ActivityKit
 
 class MainViewController: UIViewController {
     
@@ -98,10 +99,14 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
          The OneSignal.logout method will remove the External ID and set a new OneSignal ID on the current Push Subscription ID. This disassociates all aliases, tags, and all other data from the Push Subscription, effectively making it belong to a new anonymous user.
          
          It is only recommended to call this method if you do not want to send transactional push notifications to this device upon logout. For example, if your app sends targeted or personalized messages to users based on their aliases and its expected that upon logout, that device should not get those types of messages anymore, then it is a good idea to call OneSignal.logout.
-
+         
          This does not stop the subscription from receiving all push notifications, only targeted transactional messages based on the alias. You can disable push notifications to the subscription using the optOut() SDK methods:
          */
         OneSignal.logout()
+        let alert = UIAlertController(title: "You have successfully logged out", message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true)
+        
     }
     
     func getPushSubscriptionStatus() {
@@ -126,9 +131,9 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         print("Disabled Push Notifications")
         /*
          Changes the subscription status of an opted-in push subscription to opted-out. The push subscription cannot get push notifications anymore until optIn() is called or use Update subscription API with enabled: true.
-
+         
          This method does not remove or invalidate push tokens. It is designed for sites that wish to have more granular control of which users receive notifications, such as when implementing notification preference pages.
-
+         
          The user's push subscription can only be opted-out if OneSignal.Notifications.permission is true.
          */
         OneSignal.User.pushSubscription.optOut()
@@ -163,10 +168,35 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     
     func startLiveActivity() {
         print("Started Live Activity")
+        
+        let attributes = OneSignalWidgetAttributes(name: "Italy vs. Germany", homeTeam: "Italy", awayTeam: "Germany", fifaLogo: "fifa_logo", sponsorLogo: "cocacola_logo")
+        let contentState = OneSignalWidgetAttributes.ContentState(homeScore: 7, awayScore: 1)
+        let activityContent = ActivityContent(state: contentState, staleDate: Calendar.current.date(byAdding: .minute, value: 30, to: Date())!)
+        do {
+            let activity = try Activity<OneSignalWidgetAttributes>.request(
+                attributes: attributes,
+                content: activityContent,
+                pushType: .token)
+            
+            Task {
+                for await data in activity.pushTokenUpdates {
+                    let token = data.map {String(format: "%02x", $0)}.joined()
+                    print("Live Activity Push Token: ", token)
+                    // ... required code for entering a live activity
+                    OneSignal.LiveActivities.enter(Keys.activityId, withToken: token)
+                }
+            }
+        } catch (let error) {
+            print(error.localizedDescription)
+        }
     }
     
     func endLiveActivity() {
         print("Ended Live Activity")
+        OneSignal.LiveActivities.exit(Keys.activityId)
+        let alert = UIAlertController(title: "The Live Activity has been ended", message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true)
     }
     
 }
